@@ -1,6 +1,7 @@
+package org.ensime.atom
+
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
-
 import facades.atom._
 import slogging._
 

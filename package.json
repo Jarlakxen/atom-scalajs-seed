@@ -1,53 +1,52 @@
 {
-   "name":"atom-scala",
-   "version":"1.0.0",
-   "main":"./target/scala-2.12/atom-scalajs-fastopt.js",
-   "preferGlobal":true,
-   "description":"The best Scala plugin you will ever need.",
-   "activationHooks":[
-   ],
-   "engines":{
-      "atom":">=1.6.0 <2.0.0",
-      "node":"*"
+   "name": "atom-scala",
+   "version": "1.0.0",
+   "main": "./target/scala-2.12/atom-scalajs-fastopt.js",
+   "preferGlobal": true,
+   "description": "The best Scala plugin you will ever need.",
+   "activationHooks": [],
+   "engines": {
+      "atom": ">=1.6.0 <2.0.0",
+      "node": "*"
    },
-   "consumedServices":{
-      "status-bar":{
-         "versions":{
-            "^1.0.0":"consumeStatusBar"
+   "consumedServices": {
+      "status-bar": {
+         "versions": {
+            "^1.0.0": "consumeStatusBar"
          }
       }
    },
-   "providedServices":{
-      "autocomplete.provider":{
-         "versions":{
-            "2.0.0":"provide"
+   "providedServices": {
+      "autocomplete.provider": {
+         "versions": {
+            "2.0.0": "provide"
          }
       },
-      "hyperclick.provider":{
-         "versions":{
-            "0.0.0":"hyperclickProvider"
+      "hyperclick.provider": {
+         "versions": {
+            "0.0.0": "hyperclickProvider"
          }
       },
-      "intentions:list":{
-         "versions":{
-            "1.0.0":"provideIntentions"
+      "intentions:list": {
+         "versions": {
+            "1.0.0": "provideIntentions"
          }
       }
    },
-   "homepage":"",
-   "repository":{
-      "type":"git",
-      "url":""
+   "homepage": "",
+   "repository": {
+      "type": "git",
+      "url": ""
    },
-   "license":"MIT",
-   "bugs":{
-      "url":""
+   "license": "MIT",
+   "bugs": {
+      "url": ""
    },
-   "dependencies":{
+   "dependencies": {
+      "jsdom": "^9.9.0"
    },
-   "package-deps":[
-   ],
-   "keywords":[
+   "package-deps": [],
+   "keywords": [
       "scala"
    ]
 }

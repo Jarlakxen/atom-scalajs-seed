@@ -1,4 +1,4 @@
-package facades
+package org.ensime.atom.facades
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation._
