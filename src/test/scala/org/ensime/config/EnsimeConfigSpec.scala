@@ -9,8 +9,6 @@ import org.ensime.config.richconfig._
 class EnsimeConfigSpec extends EnsimeSpec {
 
   import EscapingStringInterpolation._
-  
-  val javaHome = File("/usr") / "lib" / "jvm" / "java-1.8.0-openjdk"
 
   def test(contents: String, testFn: (EnsimeConfig) => Unit): Unit = {
     println(s"Test content: $contents")
@@ -20,9 +18,11 @@ class EnsimeConfigSpec extends EnsimeSpec {
   "EnsimeConfig" should "parse a simple config" in withTempDir { dir =>
     val abc = dir / "abc"
     val cache = dir / ".ensime_cache"
+    val javaHome = dir / "java-1.8.0-openjdk"
 
     abc.mkdirs
     cache.mkdirs
+    javaHome.mkdirs
 
     test(s"""
 (:name "project"
@@ -61,9 +61,11 @@ class EnsimeConfigSpec extends EnsimeSpec {
   it should "parse a minimal config for a binary only project" in withTempDir { dir =>
     val abc = dir / "abc"
     val cache = dir / ".ensime_cache"
+    val javaHome = dir / "java-1.8.0-openjdk"
 
     abc.mkdirs
     cache.mkdirs
+    javaHome.mkdirs
 
     test(s"""
 (:name "project"

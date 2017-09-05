@@ -6,6 +6,8 @@ import java.util.TimeZone
 import java.util.UUID
 
 import org.ensime.sexp._
+import org.ensime.util.file
+import org.ensime.util.file.File
 
 /**
  * Formats for data types that are so popular that you'd expect them
@@ -61,6 +63,12 @@ trait StandardFormats {
   implicit val UuidFormat: SexpFormat[UUID] = viaString(new ViaString[UUID] {
     def toSexpString(uuid: UUID) = uuid.toString
     def fromSexpString(s: String) = UUID.fromString(s)
+  })
+
+
+  implicit val FileFormat: SexpFormat[File] = viaString(new ViaString[File] {
+    def toSexpString(file_ : File) = file_.path
+    def fromSexpString(s: String) = file.File(s)
   })
 }
 

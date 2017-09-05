@@ -25,6 +25,9 @@ bin/
 .worksheet
 
 
+# Ensime
+.ensime
+.ensime_cache/
 
 # Eclipse IDE
 .project

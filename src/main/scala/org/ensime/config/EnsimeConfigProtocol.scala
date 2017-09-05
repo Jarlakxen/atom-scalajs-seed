@@ -3,6 +3,7 @@ package org.ensime.config
 import org.ensime.api._
 import org.ensime.sexp._
 import org.ensime.sexp.formats._
+import org.ensime.util.file
 
 import io.scalajs.nodejs.fs._
 import io.scalajs.nodejs.path._
@@ -15,6 +16,14 @@ object EnsimeConfigProtocol extends LazyLogging {
     with OptionAltFormat
     with CamelCaseToDashes
   import org.ensime.config.EnsimeConfigProtocol.Protocol._
+
+  implicit object EnsimeFileFormat extends SexpFormat[RawFile] {
+    def write(f: RawFile): Sexp = SexpString(f.file.toString)
+    def read(sexp: Sexp): RawFile = sexp match {
+      case SexpString(file_) => RawFile(file.File(file_))
+      case got => deserializationError(got)
+    }
+  }
 
   private implicit val projectIdFormat: SexpFormat[EnsimeProjectId] = cachedImplicit
   private implicit val projectFormat: SexpFormat[EnsimeProject] = cachedImplicit

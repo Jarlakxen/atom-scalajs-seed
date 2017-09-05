@@ -24,7 +24,7 @@ object SexpParser {
   // Not supported: https://www.gnu.org/software/emacs/manual/html_node/elisp/Non_002dASCII-in-Strings.html
   private[sexp] val specialChars = Map[String, String](
     "\"" -> "\"",
-    "a" -> "\u0007",
+    //"a" -> "\u0007", //TODO: uncomment (https://github.com/scala-js/scala-js/issues/3125)
     "b" -> "\b",
     "t" -> "\t",
     "n" -> "\n",
