@@ -6,7 +6,7 @@ enablePlugins(ScalaJSPlugin)
 
 name := "atom-scalajs"
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.12.3"
 
 licenses += ("Apache-2.0", url("https://opensource.org/licenses/Apache-2.0"))
 
